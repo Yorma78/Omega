@@ -20,7 +20,9 @@ ExamPopUpController::ExamPopUpController(ExamPopUpControllerDelegate * delegate)
           Ion::LED::setColor(KDColorBlack);
           Ion::LED::updateColorWithPlugAndCharge();
         } else {
-          container->activateExamMode(mode);
+          Ion::LED::setColor(KDColorRed);
+          Ion::LED::setBlinking(1000,0.1f);
+          
         }
         container->refreshPreferences();
         Container::activeApp()->dismissModalViewController();
